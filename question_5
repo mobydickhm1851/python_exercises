@@ -1,0 +1,22 @@
+'''Question:
+Define a class which has at least two methods:
+getString: to get a string from console input
+printString: to print the string in upper case.
+Also please include simple test function to test the class methods.'''
+
+class GetNPrintString():
+
+    def __init__(self,name):
+        self.name=name #just for fun
+        self.input=""
+
+    def getString(self):
+        self.input=input()
+
+    def printString(self):
+        print(self.input.upper())
+
+testStr=GetNPrintString("James")
+testStr.getString()
+testStr.printString()
+print(testStr.name)

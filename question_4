@@ -7,17 +7,22 @@ Then, the output should be:
 ['34', '67', '55', '33', '12', '98']
 ('34', '67', '55', '33', '12', '98')'''
 
-num_list = []
+# write a split function 
 num_input = input("Some comma-seperated numbers: ")
-def output_list_tuple(nums):
+def output_split(nums):
+    num_list = []
     x = 0
     for i in range(len(nums)):
         if nums[i] == ',':
             num_list.append(nums[x:i])
-            x = i
+            x = i+1
     num_list.append(nums[x:len(nums)])
 
     print(num_list)
     print(tuple(num_list))
     
-output_list_tuple(num_input)
+output_split(num_input)
+
+# use the split function
+splited_list=num_input.split(",")
+print(splited_list)

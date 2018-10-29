@@ -1,0 +1,47 @@
+'''Question:
+Write a program that calculates and prints the value according to the given formula:
+Q = Square root of [(2 * C * D)/H]
+Following are the fixed values of C and H:
+C is 50. H is 30.
+D is the variable whose values should be input to your program in a comma-separated sequence.
+Example
+Let us assume the following comma separated input sequence is given to the program:
+100,150,180
+The output of the program should be:
+18,22,24
+
+Hints:
+If the output received is in decimal form, it should be rounded off to its nearest value (for example,
+ if the output received is 26.0, it should be printed as 26)
+In case of input data being supplied to the question, it should be assumed to be a console input. '''
+
+from math import sqrt
+
+input_seq = input("Give me some C but plz comma seperate them :")
+
+def cal_function(D):
+    C = 50
+    H = 30
+    return sqrt(((2 * C * D)/H))
+
+#solution 1
+def solver(sequence):
+    splited_seq=sequence.split(',')
+    done_seq=[None]*len(splited_seq)
+    print(splited_seq)
+    for i in range(len(splited_seq)):
+        done_seq[i]=int(cal_function(int(splited_seq[i])))
+    return done_seq
+
+#solution 2
+def solver_2(sequence):
+    splited_seq=sequence.split(',')
+    done_seq=[]
+    for i in range(len(splited_seq)):
+        done_seq.append(int(cal_function(int(splited_seq[i]))))
+    return done_seq
+
+
+
+print(solver(input_seq))
+print(solver_2(input_seq))

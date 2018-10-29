@@ -1,0 +1,17 @@
+#!/usr/bin/env python3
+
+input_num = raw_input()
+num_row = int(input_num.split(",")[0])
+num_column = int(input_num.split(",")[1])
+#print(num_column)
+final = []
+"""
+for i in range(num_row):
+    a = []
+    for j in range(num_column):
+        a.append(i*j)
+
+    final.append(a)
+"""
+final = [[j*i for j in range(num_column)] for i in range(num_row)]
+print (final)
